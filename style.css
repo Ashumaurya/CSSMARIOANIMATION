@@ -1,0 +1,115 @@
+html , body{
+    height: 100%;
+    width : 100% ;
+    overflow: hidden;
+    margin: 0;
+}
+
+.grass , .sky , .road {
+    position : relative ;
+}
+.sky {
+    height : 40%;
+    background: lightskyblue;
+}
+.grass{
+    height : 30% ;
+    background : seagreen;
+}
+
+.road {
+    height : 30% ;
+    background: dimgray;
+    box-sizing: border-box;
+    border-top: 10px solid gray;
+    border-bottom: 10px solid gray;
+    width : 100%
+}
+.lines {
+    box-sizing: border-box;
+    border: 5px dashed #ffffff;
+    height: 0px;
+    width: 100%;
+    position : absolute;
+    top:45%; 
+}
+
+
+
+
+/* // ELEMENTS TO ANIMATE // */
+.mario {
+    position: absolute;
+    top : 60px;
+    animation-name: drive;
+    animation-duration: 5s;
+    animation-fill-mode:both;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+   
+}
+.luigi{
+    position: absolute;
+    top:-50px;
+    animation-name: drive;
+    animation-duration: 8s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /* animation-direction: alternate-reverse; */
+}
+.cloud{
+    position: absolute;
+}
+.cloud:nth-child(1){
+    top:0;
+    left:20px;
+    width: 300px;
+    opacity: 0.5;
+    animation : wind 80s linear infinite reverse ;
+   
+    
+}
+.cloud:nth-child(2){
+    width: 500px;
+    left : 300px;
+   animation : wind 50s linear infinite reverse;
+
+}
+
+/* /// KEYFRAMES /// */
+@keyframes drive{
+    from{transform: translateX(-5px)}
+    to{transform: translateX(1560px)}
+}
+@keyframes wind {
+    from{left : -30 px}
+    to{left : 100%}
+}
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+/* do check out (https://cubic-bezier.com/#.17,.67,.83,.67) for animation-timing-delay  */
+/* //////////////////////for making our own curve  /////////////////////////////////////*/
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+
+
+
+
+
+/* Animation shorthand */
+
+/* 
+div {
+    animation-name: example;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  } */
+
+
+  /* shorthand
+
+  div {
+    animation: example 5s linear 2s infinite alternate;
+  } */
